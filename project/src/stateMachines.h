@@ -12,7 +12,7 @@ unsigned char play_lavender_town_on;
 void select_machine();
 void poweroff_machine();
 void whistle_down();
-void flash_machine();
+void dim_light();
 void play_c_major_scale();
 void play_lavender_town();
 

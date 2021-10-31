@@ -1,22 +1,23 @@
 #include <msp430.h>
 #include "stateMachines.h"
 #include "switches.h"
+#include "led.h"
 
 void __interrupt_vec(WDT_VECTOR) WDT(){
-  
   static char blink_count = 0;
-  if(++blink_count == 125){ // primary interval at which machines are advanced
-    // if a machine is on, advance its state and reset the clock
+
+  if (dim_light_on) {
+    dim_light();
+  }
+
+  // This is the main interval at which the state machines are advanced
+  if(++blink_count == 125){
     if(poweroff_on) {
       poweroff_machine();
     }
       
     if(whistle_down_on) {
       whistle_down();
-    }
-
-    else if(dim_light_on) {
-      dim_light();
     }
 
     else if(play_lavender_town_on) {
@@ -33,5 +34,5 @@ void __interrupt_vec(WDT_VECTOR) WDT(){
     if(play_c_major_scale_on) {
       play_c_major_scale();
     }
-  }
+  } 
 }
