@@ -106,6 +106,7 @@ void whistle_down()
   led_update();
 }
 
+
 /* Variables that will help the dim_light method to keep track of the states */
 int SecCnter = 0;
 int DimCnter = 4;
@@ -115,6 +116,7 @@ int SecCnter2 = 0;
    Specifically, the red LED will progressively get brighter while the green
    LED will get dimmer. This will be mapped out to switch P2.1 on the green board.
 */
+/*
 void dim_light()
 {
   buzzer_set_period(0);
@@ -142,7 +144,7 @@ void dim_light()
     }
  }  
 }
-
+*/
 /* This state machine plays the major C scale forwards and back 
    infinitely while the green and red lights alternate mapped
    to switch p2.2 on the green board.

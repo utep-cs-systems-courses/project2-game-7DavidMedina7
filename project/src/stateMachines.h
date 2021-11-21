@@ -7,6 +7,9 @@ unsigned char whistle_down_on;
 unsigned char dim_light_on;
 unsigned char play_c_major_scale_on;
 unsigned char play_lavender_town_on;
+extern int SecCnter;
+extern int DimCnter;
+extern int SecCnter2;
 
 // machine functionality
 void select_machine();
